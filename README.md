@@ -46,6 +46,13 @@ The following data sets were used throughout the project.
 Jupyter notebooks was used. 
 
 List of dependencies:
+```sh
+import pandas as pd
+import json
+import requests
+from sqlalchemy import create_engine
+from config import wlm_api
+```
 
 ### API Calls
 
