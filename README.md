@@ -49,7 +49,7 @@ List of dependencies:
 
 ### API Calls
 
-[City of los Angeles](https://data.lacity.org/resource/8yfh-4gug.json)
+<!-- [City of los Angeles](https://data.lacity.org/resource/8yfh-4gug.json)-->
 
 ## Authors
 
