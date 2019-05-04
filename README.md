@@ -1,5 +1,5 @@
 # Team 5 ETL Project- Shop Smarter
-[![INSERT YOUR GRAPHIC HERE](https://tse1.mm.bing.net/th?id=OIP.xzG43mLd_PSFvGI5LTCjHgHaE8&pid=Api&P=0&w=265&h=178)]()
+
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
