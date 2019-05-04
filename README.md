@@ -1,4 +1,5 @@
 # Team 5 ETL Project- Shop Smarter
+[![INSERT YOUR GRAPHIC HERE](https://www.bkacontent.com/wp-content/uploads/2017/10/walmart-cart.jpg)]()
 
 
 <!-- TABLE OF CONTENTS -->
