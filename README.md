@@ -33,7 +33,7 @@ The following data sets were used throughout the project.
 *
 
 
-### Finding
+### Findings
 
 *
 
