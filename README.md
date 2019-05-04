@@ -44,9 +44,8 @@ The following data sets were used throughout the project.
 
 ### Coding Style
 
-Jupyter notebooks was used. 
+Jupyter notebooks was used. The list of dependencies are as follows:
 
-List of dependencies:
 ```sh
 import pandas as pd
 import json
