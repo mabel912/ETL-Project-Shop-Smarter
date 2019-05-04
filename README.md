@@ -53,9 +53,10 @@ List of dependencies:
 
 ## Authors
 
-Mabel - Initial Work - [SMU Data ETLTeam 5](https://github.com/mabel912)
 
-Lori - Initial Work - [SMU Data ETLTeam 5](https://github.com/loribeth18)
+Lori Brady- Initial Work - [SMU Data ETLTeam 5](https://github.com/loribeth18)
+
+Mabel Gutierrez- Initial Work - [SMU Data ETLTeam 5](https://github.com/mabel912)
 
 Velindia Lucas - Initial Work - [SMU Data ETLTeam 5](https://github.com/chele0630)
 
