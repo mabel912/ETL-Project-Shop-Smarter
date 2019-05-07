@@ -37,7 +37,7 @@ The following data sets were used throughout the project.
 
 ### Findings
 
-*
+* After doing research on prices across various zipcodes, we found that Walmart offers a 2 day ship to store meaning that no store has to have everything in stock.  The products are available online and can be shipped to any other Walmart stores within 2 days, if needed.  This makes the location of the store irrelevant as far as price comparison.  Therefore, we shifted the focus pulling the top 20 trending products and then identifying which, if any, of our randomly selecting products are one of the top 20 trending products.
 
 ### Walmart Location
 
@@ -58,6 +58,7 @@ from config import wlm_api
 ### API Calls
 
 <!-- [City of los Angeles](https://data.lacity.org/resource/8yfh-4gug.json)-->
+
 
 ## Authors
 
