@@ -22,14 +22,17 @@ the United States.  We would like to find if there are differences in prices bas
 
 ### Purpose of the Analysis
 
-* The primary purpose is to examine if a relationship exists between product price and location (zipcode) of Walmart stores.
+* The primary purpose is to examine if a relationship exists between product price and location (zipcode) of Walmart stores. 
+* The secondary purpose is to identify which, if any, of our randomly selected products are one of the top 20 trending products at Walmart. 
 
 
 ### Key Documents
 
 The following data sets were used throughout the project.
 
-*
+*Product Table
+*Review Table
+*Trending Table
 
 
 ### Findings
