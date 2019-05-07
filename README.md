@@ -30,9 +30,10 @@ the United States.  We would like to find if there are differences in prices bas
 
 The following data sets were used throughout the project.
 
-*Product Table
-*Review Table
-*Trending Table
+* Product Table
+* Review Table
+* Review Stats Table
+* Trending Table
 
 
 ### Findings
