@@ -177,3 +177,7 @@ prodRatingOver.to_sql(con=database_connection, name='prodratingsoverview', if_ex
 # Create product review table from the product rating dataframe
 mergedDF.to_sql(con=database_connection, name='combineddataframe', if_exists='replace')
 ```
+
+```{python}
+
+```
