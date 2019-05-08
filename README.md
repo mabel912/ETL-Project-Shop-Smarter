@@ -58,7 +58,12 @@ from config import wlm_api
 
 ### API Calls
 
-<!-- [City of los Angeles](https://data.lacity.org/resource/8yfh-4gug.json)-->
+Products API call:
+	http://api.walmartlabs.com/v1/items/12417832?apiKey={apiKey}&lsPublisherId={Your LinkShare Publisher Id}&format=json
+Product Review API call:
+	http://api.walmartlabs.com/v1/reviews/33093101?apiKey={apiKey}&lsPublisherId={Your LinkShare Publisher Id}&format=json
+Trending API call:
+	http://api.walmartlabs.com/v1/trends?apiKey={apiKey}&lsPublisherId=xyz&format=json
 
 
 ## Authors
