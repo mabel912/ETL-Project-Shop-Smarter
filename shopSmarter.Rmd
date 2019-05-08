@@ -1,0 +1,179 @@
+---
+jupyter:
+  jupytext:
+    text_representation:
+      extension: .Rmd
+      format_name: rmarkdown
+      format_version: '1.0'
+      jupytext_version: 1.0.4
+  kernelspec:
+    display_name: Python 3
+    language: python
+    name: python3
+---
+
+```{python}
+# import dependencies
+import pandas as pd
+import json
+import requests
+from sqlalchemy import create_engine
+from config import wlm_api, myPass
+from pandas.io.json import json_normalize
+import time
+```
+
+```{python}
+# Walmart api key from config file
+apiKey = wlm_api
+```
+
+```{python}
+# api Call to walmart for the product selected 20 max on 1 call
+product_api = (f"http://api.walmartlabs.com/v1/items?ids=51800359,986978174,42490113,317677075,545584365,55449983,38676400,189542267,55420123,38317400,275846958,50820749,47090515,39073013,878167&apiKey={apiKey}&lsPublisherId=").format(apiKey)
+```
+
+```{python}
+# request call to APU
+response = requests.get(product_api)
+productList = response.json()
+# convert api call to DataFrame
+productList = pd.DataFrame.from_dict(productList['items'], orient='columns', dtype=None)
+# Grab data desired and use as column name
+productList = productList[['itemId', 'name', 'salePrice', 'clearance', 'stock']]
+# display the dataframe
+productList
+```
+
+```{python}
+# create a list of the items for api call loop
+itemId = [51800359,986978174,42490113,317677075,545584365,55449983,38676400,189542267,55420123,38317400,
+              275846958,50820749,47090515,39073013,878167]
+items = []
+# review_product_api
+for item in itemId:
+    url = 'http://api.walmartlabs.com/v1/reviews/' + str(item) + '?apiKey=' + str(apiKey) + '&lsPublisherId=&format=json'
+    response = requests.get(url)
+    prodReview = response.json()
+    time.sleep(2)
+#         json.dumps(response)
+    items.append(prodReview)
+```
+
+```{python}
+# convert api call to DataFrame
+prodReview = pd.DataFrame.from_dict(items, orient='columns', dtype=None)
+# Grab data desired and use as column name
+prodReview = prodReview[['itemId','reviewStatistics']]
+for kwy in prodReview:
+    print(kwy)
+```
+
+```{python}
+reviewStats = prodReview['reviewStatistics'].apply(pd.Series)
+reviewStats
+```
+
+```{python}
+prodRatingOver = pd.concat([prodReview, reviewStats], axis=1)
+prodRatingOver = prodRatingOver[['itemId', 'averageOverallRating', 'overallRatingRange', 'totalReviewCount']]
+prodRatingOver
+```
+
+```{python}
+mergedDF = pd.merge(productList, prodRatingOver, on='itemId')
+mergedDF
+```
+
+```{python}
+# Python SQL toolkit and Object Relational Mapper
+import sqlalchemy
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy.orm import Session
+from sqlalchemy import create_engine, func
+import mysql.connector
+from mysql.connector import errorcode
+```
+
+# Update your password in the config file to RUN
+
+```{python}
+# mySql Pass word 
+myPas = myPass
+```
+
+```{python}
+# Create Connection to MYSQL
+try:
+    conn = mysql.connector.connect(
+        host='localhost', user='root', password=myPas)
+    mycursor = conn.cursor()
+    # Error out if something happens and step out
+except mysql.connector.Error as err:
+    if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
+        print("Something is wrong with your user name or password")
+    elif err.errno == errorcode.ER_BAD_DB_ERROR:
+        print("Database does not exist")
+    else:
+        print(err)
+else:
+    # Drop table if Exists
+    sqlDrop = 'DROP DATABASE IF EXISTS shopsmarter'
+```
+
+```{python}
+mycursor.execute(sqlDrop)
+```
+
+```{python}
+mycursor.execute('CREATE DATABASE shopsmarter')
+```
+
+```{python}
+database_username = 'root'
+database_password = myPas
+database_ip       = '127.0.0.1'
+database_name     = 'shopsmarter'
+database_connection = sqlalchemy.create_engine('mysql+mysqlconnector://{0}:{1}@{2}/{3}'.
+                                               format(database_username, database_password, 
+                                                      database_ip, database_name), pool_recycle=1, pool_timeout=57600).connect()
+# Create Prodcut list Table in Database from the product list dataframe
+productList.to_sql(con=database_connection, name='productlist', if_exists='replace')
+```
+
+```{python}
+# set couple parameters to verify data on Database
+sqlQPL = 'SELECT * FROM productlist'
+shDB = 'USE shopsmarter'
+```
+
+```{python}
+# Set out Database 
+mycursor.execute(shDB)
+```
+
+```{python}
+# Select data from the productlist Table 
+mycursor.execute(sqlQPL)
+```
+
+```{python}
+# Verify the data set
+myresult = mycursor.fetchall()
+```
+
+```{python}
+# loop through the data set
+for x in myresult:
+  print(x)
+```
+
+```{python}
+# Create product review table from the product rating dataframe
+prodRatingOver.to_sql(con=database_connection, name='prodratingsoverview', if_exists='replace')
+```
+
+```{python}
+# Create product review table from the product rating dataframe
+mergedDF.to_sql(con=database_connection, name='combineddataframe', if_exists='replace')
+```
