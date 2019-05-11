@@ -41,7 +41,7 @@ The following data sets were used throughout the project.
 
 ### Findings
 
-* After doing research on prices across various zipcodes, we found that Walmart offers a 2 day ship to store meaning that no store has to have everything in stock.  The products are available online and can be shipped to any other Walmart stores within 2 days, if needed.  This makes the location of the store irrelevant as far as price comparison.  Therefore, we shifted the focus pulling the top 20 trending products and then identifying which, if any, of our randomly selecting products are one of the top 20 trending products.
+* After doing research on prices across various zipcodes, we found that Walmart offers a 2 day ship to store meaning that no store has to have everything in stock.  The products are available online and can be shipped to any other Walmart stores within 2 days, if needed.  This makes the location of the store irrelevant as far as price comparison.  Therefore, we shifted the focus on pulling data from three sources (product information, product reviews & )into one table. The merged table gives the shopper a comprehensive overview of the selected item.  It indicates the price, the review score and the number of reviews for each item.  As a shopper, this information is vital in terms of making a determination if you would like to buy a product. 
 
 
 ### Coding Style
