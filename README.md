@@ -15,11 +15,13 @@
 * [Authors](#authors)
 * [Acknowledgments](#acknowledgments)
 
+
 # Team 5 ETL Project- Shop Smarter
 
 Team 5 chose a project that would examine the prices of a set list of items and compare these items across various zip codes across
 the United States.  We would like to find if there are differences in prices based on location and look into the impact of product reviews. We have randomly selected five zipcodes in five different states (Alaska, Virginia, California, Florida, and Texas).  A random list of items will be used to compare prices among the desginated stores.  
 Using data from the Walmart API, we will create a product table, a product review table, a product review stat table and a trending products table.  We will also pull product reviews of each product and analyze these statistics for each product.  We will find the top 20 trending products for Walmart and search to see which, if any, of our randomly selected products are one of the top 20 trending products at Walmart.  
+
 
 ## Purpose of the Analysis
 
@@ -36,14 +38,18 @@ The following data sets were used throughout the project.
 ### Product Identification Table
 [![INSERT YOUR GRAPHIC HERE](https://github.com/mabel912/ETL-Project-Shop-Smarter/blob/master/ProductList.png)]()
 
+
 ### Product Review Table
 [![INSERT YOUR GRAPHIC HERE](https://github.com/mabel912/ETL-Project-Shop-Smarter/blob/master/ReviewStats.png)]()
+
 
 ### Overall Product Ratings Table
 [![INSERT YOUR GRAPHIC HERE](https://github.com/mabel912/ETL-Project-Shop-Smarter/blob/master/OverallProductRating.png)]()
 
+
 ### Megrged Product Information Table
 [![INSERT YOUR GRAPHIC HERE](https://github.com/mabel912/ETL-Project-Shop-Smarter/blob/master/MergedProductInfo.png)]()
+
 
 
 ## Findings
@@ -60,7 +66,9 @@ import pandas as pd
 import json
 import requests
 from sqlalchemy import create_engine
-from config import wlm_api
+from config import wlm_api, myPass
+from pandas.io.json import json_normalize
+import time
 ```
 
 ## API Calls
