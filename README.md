@@ -21,7 +21,7 @@ Team 5 chose a project that would examine the prices of a set list of items and 
 the United States.  We would like to find if there are differences in prices based on location and look into the impact of product reviews. We have randomly selected five zipcodes in five different states (Alaska, Virginia, California, Florida, and Texas).  A random list of items will be used to compare prices among the desginated stores.  
 Using data from the Walmart API, we will create a product table, a product review table, a product review stat table and a trending products table.  We will also pull product reviews of each product and analyze these statistics for each product.  We will find the top 20 trending products for Walmart and search to see which, if any, of our randomly selected products are one of the top 20 trending products at Walmart.  
 
-### Purpose of the Analysis
+## Purpose of the Analysis
 
 We have two primary purposes:
 
@@ -29,17 +29,24 @@ We have two primary purposes:
 * The other purpose is to identify which, if any, of our randomly selected products are one of the top 20 trending products at Walmart. 
 
 
-### Key Documents
+## Key Documents
 
 The following data sets were used throughout the project.
 
-* Product Table
-* Review Table
-* Review Stats Table
-* Trending Table
+### Product Identification Table
+[![INSERT YOUR GRAPHIC HERE](https://github.com/mabel912/ETL-Project-Shop-Smarter/blob/master/ProductList.png)]()
+
+### Product Review Table
+[![INSERT YOUR GRAPHIC HERE](https://github.com/mabel912/ETL-Project-Shop-Smarter/blob/master/ReviewStats.png)]()
+
+### Overall Product Ratings Table
+[![INSERT YOUR GRAPHIC HERE](https://github.com/mabel912/ETL-Project-Shop-Smarter/blob/master/OverallProductRating.png)]()
+
+### Megrged Product Information Table
+[![INSERT YOUR GRAPHIC HERE](https://github.com/mabel912/ETL-Project-Shop-Smarter/blob/master/MergedProductInfo.png)]()
 
 
-### Findings
+## Findings
 
 * After doing research on prices across various zipcodes, we found that Walmart offers a 2 day ship to store meaning that no store has to have everything in stock.  The products are available online and can be shipped to any other Walmart stores within 2 days, if needed.  This makes the location of the store irrelevant as far as price comparison.  Therefore, we shifted the focus on pulling data from three sources (product information, product reviews & )into one table. The merged table gives the shopper a comprehensive overview of the selected item.  It indicates the price, the review score and the number of reviews for each item.  As a shopper, this information is vital in terms of making a determination if you would like to buy a product. 
 
@@ -56,7 +63,7 @@ from sqlalchemy import create_engine
 from config import wlm_api
 ```
 
-### API Calls
+## API Calls
 
 * Products API call:
 	http://api.walmartlabs.com/v1/items/12417832?apiKey={apiKey}&lsPublisherId={Your LinkShare Publisher Id}&format=json
