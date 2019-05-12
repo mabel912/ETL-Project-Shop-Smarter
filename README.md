@@ -61,10 +61,15 @@ Jupyter notebooks was used. The list of dependencies are as follows:
 import pandas as pd
 import json
 import requests
-from sqlalchemy import create_engine
 from config import wlm_api, myPass
 from pandas.io.json import json_normalize
 import time
+import sqlalchemy
+from sqlalchemy.ext.automap import automap_base
+from sqlalchemy.orm import Session
+from sqlalchemy import create_engine, func
+import mysql.connector
+from mysql.connector import errorcode
 ```
 
 ## API Calls
