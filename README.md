@@ -19,15 +19,12 @@
 # Team 5 ETL Project- Shop Smarter
 
 Team 5 chose a project that would examine the prices of a set list of items and compare these items across various zip codes across
-the United States.  We would like to find if there are differences in prices based on location and look into the impact of product reviews. We have randomly selected five zipcodes in five different states (Alaska, Virginia, California, Florida, and Texas).  A random list of items will be used to compare prices among the desginated stores.  The two primary considerations for shopper when considering a purchase are value and quality.  Using data from the Walmart API, we will create a product information table, a product review table, a product review stat table and a trending products table.  We will merge information from these various tables into one in order to create a data display that is easy to reference for the purpose of deciding which products to purchase.  We will find the top 20 trending products for Walmart and search to see which, if any, of our randomly selected products are one of the top 20 trending products at Walmart.  
+the United States.  We would like to find if there are differences in prices based on location and look into the impact of product reviews. We have randomly selected five zipcodes in five different states (Alaska, Virginia, California, Florida, and Texas).  A random list of items will be used to compare prices among the desginated stores.  The two primary considerations for shopper when considering a purchase are value and quality.  Using data from the Walmart API, we will create a product information table, a product review table, a product review stat table and a trending products table.  We will merge information from these various tables into one in order to create a data display that is easy to reference for the purpose of deciding which products to purchase.  
 
 
 ## Purpose of the Analysis
 
-We have two primary purposes:
-
-* Our primary purpose is to gather data using the Walmart API to determine if the random items that were selected should be purchased by the consumer.  Shoppers look for a good value (we will information on prices/sales) and quality (we will use information on consumer product reviews).  This data will provide the pertinent information to the shopper when determining if they will make the purchase of the item. 
-* The other purpose is to identify which, if any, of our randomly selected products are one of the top 20 trending products at Walmart. 
+Our primary purpose is to gather data using the Walmart API to determine if the random items that were selected should be purchased by the consumer.  Shoppers look for a good value (we will information on prices/sales) and quality (we will use information on consumer product reviews).  This data will provide the pertinent information to the shopper when determining if they will make the purchase of the item. 
 
 
 ## Key Documents
